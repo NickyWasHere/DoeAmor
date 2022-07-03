@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        
+        <%- include('../partials/header') %>
+        <title>Página Principal</title>
+
+    </head>
+
+    <body>
+
+        <%- include('../partials/navbar_doador') %>
+
+        <!--Doar-->
+        <main id="doar">
+            <article id="cadastro" class="mt-4 fundo">
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                        <div class="col-md-8 justify-content-center">
+                            <h2 class="text-center text-uppercase pb-5">
+                                <strong>VAMOS DOAR!</strong>
+                            </h2>
+
+                            <div class="d-grid gap-2 my-auto">
+                                <button type="button" class="btn-outline-primary text-center text-uppercase" onclick="window.location.href='/Pesquisar-Doador/1' ">
+                                    Quero Doar
+                                    <i class="bi bi-arrow-up-circle-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+            
+                        <div class="col-md-4 d-flex justify-content-center pt-3">
+                            <img src="/imagens/logo.png" alt="" width="300" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- doubts -->
+        <article id="contato">
+            <hr>
+                <div  class="container-fluid bg-grey text-center">
+                    <div>
+                        <div>
+                            <h2 class="text-center">Fale Conosco</h2>
+                
+                            <h5>
+                                Ainda possui alguma dúvida? Entre em contato conosco que retornaremos o 
+                                mais rápido possível.
+                            </h5>
+                        </div>
+    
+                        <div>
+                            <p>Entre em contato agora e dentro de 24 horas você já terá sua resposta!</p>
+                            <p>Jacareí, São Paulo</p>
+                            <p>(12)xxxx-xxxxx</p>
+                            <p id="suporte"><strong>suporte@doeamor.com</strong></p>
+                        </div>
+                    </div>
+                </div>
+            <hr>
+        </article>
+
+        <%- include('../partials/BotaoDuvidasDoador') %>
+
+        <%- include('../partials/footer') %>
+        
+        <%- include('../partials/java') %>
+
+    </body>
+</hmtl>

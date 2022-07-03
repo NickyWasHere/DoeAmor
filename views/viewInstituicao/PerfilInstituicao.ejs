@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        
+        <%- include('../partials/header') %>
+        <title>Perfil - Instituição</title>
+
+    </head>
+
+    <body>
+
+        <%- include('../partials/navbar_inst') %>
+
+        <!------------ perfil ------------>
+        <main id="perfil">
+            <div class="container-fluid">
+                <div class="jumbotron">
+                    <h1 class="display-4"><%= nome %></h1>
+                </div>
+
+                <div id="info">
+                    <div id="info-desc">
+
+                        <h4 class="center">DESCRIÇÃO:</h4>
+                        <p class="dados"><%= descricao %></p>
+
+                    </div>
+
+                    <div id="info-desc">
+
+                        <h4 class="center">EM <%= prioridade %> NECESSIDADE:</h4>
+                        <p class="dados"><%= necessidade %></p>
+
+                    </div>
+
+                    <div id="info_pessoa">
+
+                        <h4 class="topicos">ID:</h4>
+                        <p class="dados"><%= id %></p>
+
+                        <h4>E-MAIL:</h4>
+                        <p class="dados"><%= email %></p>
+
+                        <h4>CNPJ:</h4>
+                        <p class="dados"><%= cnpj %></p>
+
+                        <h4>TELEFONE:</h4>
+                        <p class="dados"><%= telefone %></p>
+                    </div>
+
+                    <div id="localizacao">
+                        <h4>ENDEREÇO:</h4>
+                        <p class="dados"><%= rua %></p>
+
+                        <h4>CIDADE E ESTADO:</h4>
+                        <p class="dados"><%= cidade %>, <%= estado %></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <%- include('../partials/BotaoDuvidasInst') %>
+
+        <%- include('../partials/footer') %>
+        
+        <%- include('../partials/java') %>
+
+    </body>
+</html>
