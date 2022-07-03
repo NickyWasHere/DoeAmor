@@ -1,0 +1,42 @@
+localhost:3000
+
+*-------------------Terminal XAMPP-------------------*
+
+site: 
+http://localhost:8000/phpmyadmin/
+
+comandos: 
+sudo /opt/lampp/lampp start
+sudo /opt/lampp/lampp stop
+sudo /opt/lampp/lampp restart
+
+*------------Terminal Iniciar app.js------------*
+
+path: 
+'Área de trabalho' -> 'Doe Amor'
+
+comando: 
+nodemon ou node app.js
+
+*------------------Sequelize---------------------*
+
+npm install --save-dev sequelize-cli -> baixa sequelize
+
+npx sequelize-cli init -> cria pastas padrões
+
+npx sequelize db:create -> cria database
+
+npx sequelize migration:create --name=create-doador -> cria migration de uma tabela
+
+npx sequelize db:migrate -> executa as migrations no banco de dados
+
+npx sequelize seed:generate --name=doadores -> cria novo seeder
+
+npx sequelize db:seed:all -> executa seeders no banco de dados
+
+*--------------Para o professor------------------*
+
+Não conseguimos fazer os migrations e seeders funcionarem,
+então é preciso importar o arquivo doeamor.sql no banco de
+dados para funcionar
+

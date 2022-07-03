@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        
+        <%- include('partials/header') %>
+
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Kaique Cassal">
+        <meta name="author" content="Nicolas Tenório">
+        <meta name="author" content="Luisa Torres">
+        <meta name="author" content="Renan Dias">
+        <meta name="description" content="Site de doações">
+        <meta name="keywords" content="doações, ONG, ajuda, amor, caridade">
+        <meta name="robots" content="index, follow">
+
+        <title>Doe Amor - doações</title>
+
+    </head>
+
+    <body>
+
+        <!------------------------------------------------------------------------------------------------------------------------->
+        <!-----------------------------------------------------------Página-------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------------------->
+
+        <!------------ navigation bar ------------>
+        <header id="navegacao" class="fixed-top">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                    
+                    <a class="navbar-brand img-fluid" href="/">
+                        <h1 id="logo">DoeAmor - doações</h1>
+                    </a>
+                    
+                </nav>
+            </div>
+        </header>
+
+        <!------------ banners ------------>
+        <div id="cartaz">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- images-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/imagens/cartazDoeAmor01.png" class="d-block w-100" alt="projeto doe amor">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/imagens/cartazDoeAmor02.png" class="d-block w-100" alt="doar faz muito bem para o coração">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/imagens/cartazDoeAmor03.png" class="d-block w-100" alt="faça parte desse projeto">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!------------ contents ------------>
+        <main id="conteudo">
+      
+            <!-- questions -->
+            <article id="info">
+                <div class="container-fluid">
+                    <div class="card-deck">
+                            <div class="card" style="width: 25rem;">
+                                <img src="/imagens/Quem somos.png" class="card-img-top" alt="Quem nos somos?">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">O que é?</h5>
+                                    <p class="card-text">
+                                        Doe Amor é um web site focado em doação, totalmente grátis e 
+                                        com o simples objetivo de facilitar e ajudar pessoas carentes.
+                                    </p>
+                                </div>
+                            </div>
+    
+                            <div class="card" style="width: 25rem;">
+                                <img src="/imagens/Como doar.png" class="card-img-top" alt="Como fazer uma doação em nosso site?">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Como doar?</h5>
+                                    <p class="card-text">
+                                        Depois de cadastrar você poderá encontrar instituições que precisam de doações e 
+                                        poderá se conectar com elas.
+                                    </p>
+                                </div>
+                            </div>
+    
+                            <div class="card" style="width: 25rem;">
+                                <img src="/imagens/De onde surgiu.png" class="card-img-top" alt="De onde surgiu a ideia?">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Como surgiu?</h5>
+                                    <p class="card-text">
+                                        Doe amor é um projeto que foi desenvolvido pelo grupo de alunos 
+                                        do IFSP Jacareí e uma professora orientadora.
+                                    </p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </article>
+          
+            <!-- register -->
+            <article id="cadastro" class="mt-4 fundo">
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                        <div class="col-md-8 justify-content-center">
+                            <h2 class="text-center text-uppercase pb-5">
+                                <strong>crie já sua conta</strong>
+                            </h2>
+                            <div class="d-grid gap-2 my-auto">
+                                <button onclick="vefCad()" type="button" class="btn-outline-primary text-center text-uppercase" style="color: white;" id="cadastrar">
+                                    Cadastro
+                                    <i class="bi bi-box-arrow-in-down"></i>
+                                </button>
+
+                                <button onclick="vefLog()" type="button" class="btn-outline-primary text-center text-uppercase" style="color: white;" id="logar">
+                                    Login
+                                    <i class="bi bi-person"></i>
+                                </button>
+                            </div>
+                        </div>
+            
+                        <div class="col-md-4 d-flex justify-content-center pt-3">
+                            <img src="imagens/logo.png" alt="" width="300" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- doubts -->
+            <article id="contato">
+                <hr>
+                    <div  class="container-fluid bg-grey text-center">
+                        <div>
+                            <div>
+                                <h2 class="text-center">Fale Conosco</h2>
+                    
+                                <h5>
+                                    Ainda possui alguma dúvida? Entre em contato conosco que retornaremos o 
+                                    mais rápido possível.
+                                </h5>
+                            </div>
+        
+                            <div>
+                                <p>Entre em contato agora e dentro de 24 horas você já terá sua resposta!</p>
+                                <p>Jacareí, São Paulo</p>
+                                <p>(12)xxxx-xxxxx</p>
+                                <p id="suporte"><strong>suporte@doeamor.com</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                <hr>
+            </article>
+        </main>
+
+        <%- include('partials/footer') %>
+        
+        <%- include('partials/java') %>
+
+    </body>
+</hmtl>

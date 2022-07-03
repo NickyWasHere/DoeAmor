@@ -1,0 +1,26 @@
+<div class="row"> 
+    
+    <% for (let t of todos) { %>
+
+        <div class="col-sm-12 col-md-6 col-xl-4 d-flex justify-content-center">
+            <article class="info">
+                <div class="card" style="width: 20rem; margin-left: 0px;">
+                    <div class="card-body">
+                        <h3 class="card-title"><%= t.nome %></h3>
+    
+                        <h6 class = "card-text">Nota recebida:</h6>
+                        <p><%= t.nota %> <i class="bi bi-heart-fill"></i></p>
+    
+                        <h6 class = "card-text">
+                            <i class="bi bi-chat-left-text-fill"></i>
+                            Comentário:
+                        </h6>
+                        <p class="justify"><%= t.comentario %></p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    <% } %>
+
+</div>

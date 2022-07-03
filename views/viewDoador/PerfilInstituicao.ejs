@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        
+        <%- include('../partials/header') %>
+        <title>Perfil - Instituição</title>
+
+    </head>
+
+    <body>
+
+        <%- include('../partials/navbar_doador') %>
+
+       <!------------ perfil ------------>
+       <main id="perfil">
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1 class="display-4"><%= nome %></h1>
+            </div>
+
+            <div id="info">
+                <div id="info-desc">
+
+                    <h4 class="center">DESCRIÇÃO:</h4>
+                    <p class="dados"><%= descricao %></p>
+
+                </div>
+
+                <div id="info-desc">
+
+                    <h4 class="center">EM <%= prioridade %> NECESSIDADE:</h4>
+                    <p class="dados"><%= necessidade %></p>
+
+                </div>
+
+                <div id="info_pessoa">
+
+                    <h4 class="topicos">ID:</h4>
+                    <p class="dados"><%= key %></p>
+
+                    <h4>E-MAIL:</h4>
+                    <p class="dados"><%= email %></p>
+
+                    <h4>CNPJ:</h4>
+                    <p class="dados"><%= cnpj %></p>
+
+                    <h4>TELEFONE:</h4>
+                    <p class="dados"><%= telefone %></p>
+                </div>
+
+                <div id="localizacao">
+                    <h4>ENDEREÇO:</h4>
+                    <p class="dados"><%= rua %></p>
+
+                    <h4>CIDADE E ESTADO:</h4>
+                    <p class="dados"><%= cidade %>, <%= estado %></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container d-flex justify-content-center">
+        <a href="/Ver-Feedback/<%= key %>/1" class="btn-success d-flex justify-content-center" style="text-decoration: none;">
+            Ver Feedback
+        </a>
+    </div> <br> <br>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 justify-content-center">
+                <button onclick="doacaoDireta()" type="button" class="btn-outline-primary text-center text-uppercase">
+                    Doar
+                    <i class="bi bi-box-seam"></i>
+                </button>
+            </div>
+
+            <div class="col-md-6 justify-content-center">
+                <button onclick="feedback()" type="button" class="btn-outline-primary text-center text-uppercase">
+                    Feedback
+                    <i class="bi bi-heart-fill"></i>
+                </button>
+            </div>
+
+        </div>
+    </div> <br> <br>
+
+    <!--Script para poder utilizar do id da instituição-->
+    <script>
+
+        //Doação
+        function doacaoDireta() {
+            Swal.fire({
+            title: 'Doação',
+            html:
+
+            //Formulário
+            '<form action="/Doar-Direto/<%= key %>" method="POST">' +
+
+                '<label class="control-label">Insira os dados da doação:</label>' +
+
+                //Categoria
+                '<div class="form-group">' +
+                    '<label class="control-label">Categoria do(s) item(ns):</label>' +
+                    '<select class="form-control" name="categoria" required>' +
+                        '<option value="roupa(s)">Roupa</option>' +
+                        '<option value="briquedo(s)">Brinquedo</option>' +
+                        '<option value="livro(s)">Livro</option>' +
+                        '<option value="alimento(s)">Alimento</option>' +
+                        '<option value="item(ns) de higiene">Higiênico</option>' +
+                        '<option value="outro(s)" selected>Outro</option>' +
+                    '</select>' +
+                '</div>' +
+
+                //Descrição
+                '<div class="form-group">' +
+                    '<label class="control-label">Especificação:</label>' + 
+                    '<input class="form-control" type="text" name="descProduto" placeholder="Especifique o(s) produto(s)" required>' +
+                '</div>' +
+
+                //Quantidade
+                '<div class="form-group">' +
+                    '<label class="control-label">Quantidade:</label>' + 
+                    '<input class="form-control" type="number" name="quantidade" placeholder="Quantidade de itens que pretende doar" required>' +
+                '</div>' +
+
+                //Estado dos itens
+                '<div class="form-group">' +
+                    '<label class="control-label">Descreva o estado dos itens:</label>' +
+                    '<select class="form-control" name="estadoItens" required>' +
+                        '<option value="novo(s)" selected>Novos</option>' +
+                        '<option value="usado(s)">Usados</option>' +
+                    '</select>' +
+                '</div>' +
+
+                //Entrega
+                '<div class="form-group">' +
+                    '<label class="control-label">Data de entrega:</label>' + 
+                    '<input class="form-control" type="date" name="entrega" required>' +
+                '</div>' +
+
+                '<hr>' +
+                '<button class="btn-success">Confirmar</button>' +
+            '</form>',
+
+            showConfirmButton: false,
+            showCloseButton: true
+            })
+        }
+
+        //Feedback
+        function feedback() {
+    Swal.fire({
+      title: 'Feedback',
+      html:
+
+        //Formulário
+        '<form action="/Mandar-Feedback/<%= key %>" method="post">' +
+
+            //Nota
+            '<br>' +
+            '<label class="control-label" for="notaFB">Avalie esta instituição:</label>' +
+
+            //Corações
+            '<section id="like" class="rating" name="notaFB">' +
+
+                //Coração 1
+                '<input type="radio" id="heart_5" name="like" value="5" />' +
+                '<label for="heart_5" title="Nota Cinco">&#10084;</label>' +
+
+                //Coração 2
+                '<input type="radio" id="heart_4" name="like" value="4" />' +
+                '<label for="heart_4" title="Nota Quatro">&#10084;</label>' +
+
+                //Coração 3
+                '<input type="radio" id="heart_3" name="like" value="3" />' +
+                '<label for="heart_3" title="Nota Três">&#10084;</label>' +
+
+                //Coração 4
+                '<input type="radio" id="heart_2" name="like" value="2" />' +
+                '<label for="heart_2" title="Nota Dois">&#10084;</label>' +
+
+                //Coração 5
+                '<input type="radio" id="heart_1" name="like" value="1" />' +
+                '<label for="heart_1" title="Nota Um">&#10084;</label>' +
+            '</section> <br>' +     
+
+            //Comentário
+            '<div class="form-group">' +
+            '<label class="control-label">Deixe um comentário:</label>' +
+            '<input class="form-control" type="text" name="comentario">' +
+            '</div>' +
+
+            '<hr>' +
+            '<button class="btn-success">Enviar</button>' +
+        '</form>',
+
+        showConfirmButton: false,
+        showCloseButton: true
+        })
+
+    }
+
+    </script>
+        
+        <%- include('../partials/BotaoDuvidasDoador') %>
+
+        <%- include('../partials/footer') %>
+        
+        <%- include('../partials/java') %>
+
+    </body>
+</html>

@@ -1,0 +1,580 @@
+/*----------------------------------------------------------Geral---------------------------------------------------------------*/
+@font-face {
+    font-family: 'Georama';
+    src: url(fonts/Georama-Italic-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Newsreader';
+    src: url(fonts/Newsreader-Italic-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto-Light.ttf);
+}
+
+/*Esconder seta em button type number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/*Para esconder no firefox*/
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 0px; /* Altura do menu */
+    /*overflow-x:hidden; /* Esconder scrollbar horizontal */
+    background-color: #f5f5f5;
+}
+
+.hidden {
+    display: none;
+}
+
+[class*="col-"] {
+    float: left;
+    margin-left: 0px;
+    padding: 15px;
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.jumbotron{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.center {
+    text-align: center;
+}
+
+.card-text{
+    text-align: start;
+}
+
+.scroll {
+    height: 500px;
+    overflow-y: auto;
+}
+
+label {
+    font-family: 'Georama';
+}
+
+input {
+    font-family: 'Georama';
+}
+
+button {
+    font-family: 'Newsreader-Bold';
+}
+
+.modal-dialog {
+    overflow-y: initial !important
+}
+
+:root{
+    --branco: #fff;
+    --cinza: #323E40;
+    --verde: #1c543f;
+    --ciano: #20B2AA;
+    --rosa: #cd2e58;
+    --laranja: #FF8C00;
+}
+
+*{
+    font-family: 'Roboto', 'Arial', 'Helvetica', 'sans-serif';
+    text-decoration: none;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    background: linear-gradient(to right, #aef8f4, #22BFB7, #20B2AA, #1C9993, #283133);
+    transition: background ease-out 0.2s;
+}
+#perfilBotao{
+    margin-left: 10px;
+    border-radius: 12px;
+    background-color: #E67E00;
+    color: white;
+}
+
+#perfilBotao:hover{
+    background-color: var(--laranja);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    color: var(--cinza);
+    transition: 0.3s;
+}
+
+#menuPerfil{
+    background-color: #E67E00;
+    border-radius: 12px;
+}
+
+#navegacao.active{
+    position: fixed;
+    box-shadow: 0 0 30px rgba(0, 0,0, 0.2);
+    z-index: 9999;
+}
+#navegacao{
+    color: var(--rosa);
+}
+#logo{
+    width: 80px;
+    height: 80px;
+    float: left;
+    background: url(../imagens/logo.png) center center/80px no-repeat;
+    font-size: 0;
+}
+#navegacao .nav-link{
+    text-transform: uppercase;
+    margin: 0, 15px;
+    color: var(--branco);
+    border-bottom: solid 1px transparent;
+}
+#navegacao .nav-link:hover{
+    color: var(--rosa);
+    border-bottom: solid 1px var(--rosa);
+}
+#menu{
+    float: left;
+    margin-left: -13%;
+    margin-top: -1.5%;
+    margin-bottom: -10%;
+    background-color: var(--cinza);
+    height: 100%;
+    text-align: center;
+    padding: 2%;
+    color: var(--branco);
+}
+#cartaz{
+    margin-top: 22%;
+}
+#info{
+    text-align: justify;
+    margin: auto;
+}
+.card{
+    margin: 5%;
+}
+.fundo{
+    background: url(../imagens/fundo.png) center no-repeat fixed;
+    padding: 5%;
+    color: var(--rosa);
+}
+#cadastro h2{
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 5%;
+    border-radius: 20px;
+}
+strong{
+    height: 100px;
+    line-height: 50px;
+    text-align: center;
+}
+.btn-outline-primary{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    width: 80%;
+    color: var(--branco);
+    margin-left: 10%;
+}
+.btn-outline-warning{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    width: 80%;
+    color: var(--branco);
+    margin-left: 10%;
+}
+
+.btn-outline-warning:hover{
+    background-color: var(--laranja);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    transition: 0.3s;
+}
+
+.btn-outline-warning i{
+    padding-top: 0px;
+}
+
+.btn-success{
+    background-color: #006400;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    width: 80%;
+}
+.btn-success:hover{
+    background-color: #084908;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.btn-danger{
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    width: 80%;
+}
+.btn-danger:hover{
+    border-radius: 12px;
+    transition: 0.3s;
+}
+.btn-outline-danger{
+    background-color: #e10000;
+    color: white;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+.btn-outline-danger:hover{
+    background-color: red;
+    color: black;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    transition: 0.3s;
+}
+#cadastro i{
+    color: var(--branco);
+}
+
+#logar i{
+    padding: 0px;
+}
+
+.btn-outline-primary{
+    background-color: #E67E00;
+}
+.btn-outline-primary:hover{
+    background-color: var(--laranja);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    color: var(--cinza);
+    transition: 0.3s;
+}
+#cadVerificar{
+    background-color: rgba(50, 62, 64, 0.8);
+}
+.marca{
+    margin: auto
+}
+#contato{
+    background-color: #ff8c0080;
+}
+#contato #suporte{
+    color: var(--branco);
+}
+#rodape{
+    background: linear-gradient(to left, #6D888C, #3C4A4D, #323E40, #283133);;
+    padding: 2%;
+    color: #fff;
+}
+#rodape h4{
+    color: var(--branco);
+    text-align: center;
+}
+#rodape li{
+    list-style-type: none;
+    padding: 2%;
+    margin-top: 3%;
+    background-color: #f5f5f581;
+    border-radius: 5px;
+    width: 100%;
+}
+#rodape li:hover{
+    box-shadow: 0 0 20px rgba(0, 0,0, 0.6);
+}
+#rodape h6{
+    display: inline;
+}
+#rodape i{
+    color: var(--branco);
+}
+#rodape a, i{
+    text-decoration: none;
+}
+#rodape #local:hover{
+    color: #ff0000;
+}
+#rodape #telefone:hover{
+    color: #000000;
+}
+#rodape #whatsapp:hover{
+    color: #008000;
+}
+#rodape #facebook:hover{
+    color: #3B5998;
+}
+#rodape #instagram:hover{
+    color: #9e2a8f;
+}
+
+/*----------------------------------------------------------Doação--------------------------------------------------------------*/
+#doar{
+    margin-top: 22%;
+}
+.text-donate {
+    margin: 10px;
+}
+.text-center-donate {
+    margin: 100px;
+    margin-left: 30%;
+}
+#procurar{
+    margin-top: 5%;
+}
+#perguntas{
+    margin: 5%;
+}
+#perguntas a{
+    text-decoration: none;
+}
+#perguntas button{
+    float: right;
+    background-color: var(--laranja);
+    border-radius: 100%;
+    color: var(--rosa);
+}
+#perguntas button:hover{
+    background-color: #E67E00;
+    color: var(--branco);
+}
+
+/*---------------------------------------------------Perguntas frequentes-------------------------------------------------------*/
+#titulo{
+    text-align: center;
+    width: 100%;
+    padding: 2%;
+    background-color: #e6e6e6;
+    margin: 23% 0 3% 0;
+}
+.botao{
+    background-color: var(--laranja);
+    margin: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+.mostr{
+    margin: 5%;
+    text-align: justify;
+}
+.perguntas {
+    background-color: rgb(230, 230, 230);
+}
+
+/*---------------------------------------------------Perfil Doador-------------------------------------------------------*/
+
+#perfil{
+    margin-top: 8%;
+}
+
+#info{
+    width: 80%;
+    margin: auto;
+}
+
+#info-desc{
+    background-color: #cd2e5866;
+    height: 100%;
+    padding: 2.5%;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    border: 1px #000000 solid;
+}
+
+#info_pessoa{
+    background-color: #ff8c0066;
+    height: 100%;
+    padding: 2.5%;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    border: 1px #000000 solid;
+}
+.dados{
+    padding: 2%;
+    border: 1px #000000 solid;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 1%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#localizacao{
+    background-color: #1c543f66;
+    height: 100%;
+    padding: 2.5%;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    border: 1px #000000 solid;
+}
+
+/*---------------------------------------------------Histórico-------------------------------------------------------*/
+  
+.card {
+    background: linear-gradient(#d1d1d1, #eeeeee);;
+    border-radius: 15px;
+    border: 1px black solid
+}
+#mudaPag{
+    margin: 2.5% auto;
+}
+/*---------------------------------------------------Instituições-------------------------------------------------------*/
+
+#pesquisar{
+    width: 300px;
+}
+
+.inst{
+    margin-bottom: 20px;
+}
+
+.pesquisar{
+    color: black;
+    border-color: black;
+}
+
+/*---------------------------------------------------Feedback-------------------------------------------------------*/
+  
+  /* - - - - - RATINGS */
+  .rating {
+    width: 180px;
+    height: 40px;
+    padding: 5px 10px;
+    margin: auto;
+    border-radius: 10px;
+    background: lightseagreen;
+    display: block;
+    overflow: hidden;
+    
+    box-shadow: 0 1px rgb(43, 43, 43),
+                0 5px rgb(44, 44, 44),
+                0 9px 6px -3px rgb(27, 27, 27);
+    
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  .rating:not(:checked) > input {
+    display: none;
+  }
+/* -- Coração -- */
+  #like {
+    bottom: -425px;
+    left: -935px;
+  }
+  #like:not(:checked) > label {
+    cursor:pointer;
+    float: right;
+    width: 30px;
+    height: 30px;
+    display: block;
+    
+    color: rgb(255, 200, 200);
+    line-height: 33px;
+    text-align: center;
+  }
+  #like:not(:checked) > label:hover,
+  #like:not(:checked) > label:hover ~ label {
+    color: rgba(255, 17, 0, 0.712);
+  }
+  #like > input:checked + label:hover,
+  #like > input:checked + label:hover ~ label,
+  #like > input:checked ~ label:hover,
+  #like > input:checked ~ label:hover ~ label,
+  #like > label:hover ~ input:checked ~ label {
+    color: rgba(255, 17, 0, 0.8);
+  }
+  #like > input:checked ~ label {
+    color: rgb(255, 17, 0);
+  }
+.a{
+  width: 800px;
+  border-radius: 5px;
+}
+.btn-feed {
+  margin: 30px 30px;
+  margin-left: 1000px;
+  margin-right: 30px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: darkorange;
+  color: #fff;
+
+}
+.btn-feed:hover {
+  background: transparent;
+  color: black;
+  border-color: black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #999;
+  transition: 0.3s;
+}
+/* SMALL DEVICE - SMARTPHONES*/
+@media screen and (min-width: 480px) {
+    #logo{
+        width: 214px;
+        background: url(../imagens/subLogo01.png) center center/214px no-repeat;
+    }
+    
+}
+/* SMALL DEVICE - TABLETS */
+@media screen and (min-width: 768px) {
+    
+    #doar{
+        margin-top: 8%;
+    }
+    #perguntas button{
+        width: 100%;
+        height: 120%;
+    }
+    
+    .card{
+        width: 80%;
+    }
+}
+/* MEDIUM DEVICE - TABLETS E DESKTOPS */
+@media screen and (min-width: 960px) {
+    #titulo{
+        margin: 8% 0 3% 0;
+    }
+    #cartaz{
+        margin-top: 8%;
+    }
+}
+/* LARGE DEVICE - WIDE SCREENS */
+@media screen and (min-width: 1280px) {
+    #titulo{
+        margin: 8% 0 3% 0;
+    }
+    #cartaz{
+        margin-top: 8%;
+    }
+}

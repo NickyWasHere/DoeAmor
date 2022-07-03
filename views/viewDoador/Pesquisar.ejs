@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        
+        <%- include('../partials/header') %>
+        <title>Instituições</title>
+
+    </head>
+
+    <body>
+        
+        <%- include('../partials/navbar_doador') %>
+
+        <!-----------------------------------------------------------Instituicoes-------------------------------------------------->
+        <main id="pesquisaInstituicoes grid">
+            <div class="container-fluid">
+
+                <div class="jumbotron">
+                    <h1 class="display-4">INSTITUIÇÕES</h1>
+                </div>
+
+                <div class="row">
+
+                    <% for (let t of todos) { %>
+
+                        <div class="col-sm-12 col-md-6 col-xl-4 d-flex justify-content-center" id="inst1">
+                            <article class="instituicao">
+                                <div class="card" style="width: 20rem; margin-left: 0px;"> 
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%= t.nome_inst %></h5>
+    
+                                        <h6 class="card-subtitle mb-2 text-muted">
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <%= t.email %>
+                                        </h6>
+    
+                                        <p class="card-text">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <%= t.estado %>,  <%= t.cidade %> -  <%= t.rua %>
+                                        </p>
+    
+                                        <a href="/VerInst-Doador/<%= t.id_instituicao %>" class="card-link justify-content-center">
+                                            <i class="bi bi-person-circle"></i>Perfil
+                                        </a>
+    
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                    <% } %>
+                    
+                </div>
+            </div>
+        </main>
+
+        <!--Mudar de Página-->
+        <h6 class="d-flex justify-content-center">
+            <a href="/Pesquisar-Doador/<%= paginaAtual-1 %>" style="color: #E67E00;">
+                <i class="bi bi-caret-left-fill" title="Página anterior"></i>
+            </a>
+            
+            <p><%= paginaAtual %>/<%= paginas %></p>
+
+            <a href="/Pesquisar-Doador/<%= paginaAtual+1 %>">
+                <i class="bi bi-caret-right-fill" title="Página seguinte" style="color: #E67E00;"></i>
+            </a>
+        </h6>
+
+        <!-- doubts -->
+        <article id="contato">
+            <hr>
+                <div  class="container-fluid bg-grey text-center">
+                    <div>
+                        <div>
+                            <h2 class="text-center">Fale Conosco</h2>
+                
+                            <h5>
+                                Ainda possui alguma dúvida? Entre em contato conosoco que retornaremos o 
+                                mais rápido possível.
+                            </h5>
+                        </div>
+    
+                        <div>
+                            <p>Entre em contato agora e dentro de 24 horas você já terá sua resposta!</p>
+                            <p>Jacareí, São Paulo</p>
+                            <p>(12)xxxx-xxxxx</p>
+                            <p id="suporte"><strong>suporte@doeamor.com</strong></p>
+                        </div>
+                    </div>
+                </div>
+            <hr>
+        </article>
+
+        <%- include('../partials/BotaoDuvidasDoador') %>
+
+        <%- include('../partials/footer') %>
+        
+        <%- include('../partials/java') %>
+
+    </body>
+</html>

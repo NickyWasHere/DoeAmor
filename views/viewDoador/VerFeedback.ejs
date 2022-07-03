@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        
+        <%- include('../partials/header') %>
+        <title> Feedback - Instituição </title>
+
+    </head>
+
+    <body>
+
+        <%- include('../partials/navbar_doador') %>
+
+       <!------------------------------------------------------Feedback---------------------------------------------------->
+       <main id="historico">
+        <div class="container-fluid">
+
+            <div class="jumbotron">
+                <h1 class="display-4">FEEDBACK</h1>
+            </div>
+
+            <%- include('../partials/feedback') %>
+
+        </div>
+    </main>
+
+        <!--Mudar de Página-->
+        <h6 class="d-flex justify-content-center">
+            <a href="/Feedback/<%= paginaAtual-1 %>">
+                <i class="bi bi-caret-left-fill" title="Página anterior" style="color: #E67E00;"></i>
+            </a>
+            
+            <p><%= paginaAtual %>/<%= paginas %></p>
+
+            <a href="/Feedback/<%= paginaAtual+1 %>">
+                <i class="bi bi-caret-right-fill" title="Página seguinte" style="color: #E67E00;"></i>
+            </a>
+        </h6>
+
+        <%- include('../partials/BotaoDuvidasDoador') %>
+
+        <%- include('../partials/footer') %>
+        
+        <%- include('../partials/java') %>
+
+    </body>
+</html>
