@@ -9,3 +9,5 @@ CASO DESEJE RODAR O SITE EM SEU COMPUTADOR:
  - Será necessário importar o arquivo "doeamor.sql" à um software capaz de rodar arquivos sql (Para o projeto foi utilizado o XAMPP);
  - Após iniciar o banco de dados, será necessário ter instalado o node.js e rodar o comando "node app.js" em um terminal aberto na pasta Doe Amor;
  - O site será aberto no porte 3000 (Caso deseje mudar isso, abra o arquivo node.js em um editor de texto, vá até a última linha e mude o número de 3000 para um porte de sua preferência).
+
+Obrigado pela atenção :)
